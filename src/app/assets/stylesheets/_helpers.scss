@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.hr {
+    @include size(100%, 1px);
+    display: block;
+    background: $color-lightest;
+}
+
+.nowrap {
+    white-space: nowrap;
+}

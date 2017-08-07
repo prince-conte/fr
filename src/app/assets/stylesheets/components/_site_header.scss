@@ -4,6 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem;
+
+    @include mq(xs) {
+        padding: 3rem;
+    }
 
     @include mq(sm) {
         padding: 2rem;
@@ -11,8 +16,12 @@
 
 
     &__logo-box {
-        @include size(6rem);
+        @include size(4rem);
         display: block;
+
+        @include mq(ms) {
+            @include size(6rem);
+        }
 
         > img {
             display: block;

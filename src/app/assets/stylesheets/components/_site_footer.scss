@@ -7,11 +7,19 @@
     bottom: 0;
 
 
+    @include mq(xs) {
+        padding: 2rem;
+    }
+
     @include mq(sm) {
         padding: 4rem 2rem;
     }
 
     &__box {
+
+        @include mq(xs) {
+            text-align: center;
+        }
 
         @include mq(sm) {
             display: flex;
@@ -22,13 +30,13 @@
     }
 
     &__navigate {
-        display: flex;
+
+        @include mq(sm) {
+            display: flex;
+        }
 
         > ul {
 
-            @include mq(xs) {
-                display: none;
-            }
 
             @include mq(sm) {
 
@@ -42,12 +50,16 @@
                 padding: .3rem 1rem;
 
                 > a {
-                    @include font(1.4rem,1.4rem);
+                    @include font(1.2rem,1.8rem);
                     position: relative;
                     display: inline-block;
                     color: $color-base;
-                    white-space: nowrap;
                     text-decoration: none;
+
+                    @include mq(md) {
+                        @include font(1.4rem,1.4rem);
+                        white-space: nowrap;
+                    }
 
                     &:hover {
                         &::after {
@@ -82,5 +94,38 @@
         }
     }
 
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(xs) {
+            margin-top: 2rem;
+        }
+
+    }
+
+
+    &__logo-box {
+        @include size(4rem);
+        display: block;
+        margin-left: auto;
+
+        @include mq(xs) {
+            display: none;
+        }
+
+        > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            vertical-align: top;
+        }
+    }
+
+    &__copyright-content {
+        @include font(1.2rem, 1.2rem);
+        margin-top: auto;
+    }
 
 }

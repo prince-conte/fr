@@ -657,6 +657,8 @@ table {
 
 .page {
   opacity: 0;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .fadeIn {
@@ -1810,6 +1812,13 @@ a.button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 1rem;
+}
+
+@media all and (max-width: 767px) {
+  .site-header {
+    padding: 3rem;
+  }
 }
 
 @media all and (min-width: 768px) {
@@ -1819,8 +1828,8 @@ a.button {
 }
 
 .site-header__logo-box {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   display: block;
 }
 
@@ -1901,9 +1910,21 @@ a.button {
   bottom: 0;
 }
 
+@media all and (max-width: 767px) {
+  .site-footer {
+    padding: 2rem;
+  }
+}
+
 @media all and (min-width: 768px) {
   .site-footer {
     padding: 4rem 2rem;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .site-footer__box {
+    text-align: center;
   }
 }
 
@@ -1921,15 +1942,11 @@ a.button {
   }
 }
 
-.site-footer__navigate {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media all and (max-width: 767px) {
-  .site-footer__navigate > ul {
-    display: none;
+@media all and (min-width: 768px) {
+  .site-footer__navigate {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -1945,13 +1962,20 @@ a.button {
 }
 
 .site-footer__navigate > ul > li > a {
-  font-size: 1.4rem;
-  line-height: 1;
+  font-size: 1.2rem;
+  line-height: 1.5;
   position: relative;
   display: inline-block;
   color: #121314;
-  white-space: nowrap;
   text-decoration: none;
+}
+
+@media all and (min-width: 1025px) {
+  .site-footer__navigate > ul > li > a {
+    font-size: 1.4rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
 }
 
 .site-footer__navigate > ul > li > a:hover::after {
@@ -1983,23 +2007,78 @@ a.button {
   background: #121314;
 }
 
-.page-promo {
-  position: absolute;
-  width: 100%;
-  height: 70%;
+.site-footer__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media all and (max-width: 767px) {
+  .site-footer__content {
+    margin-top: 2rem;
+  }
+}
+
+.site-footer__logo-box {
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  margin-left: auto;
+}
+
+@media all and (max-width: 767px) {
+  .site-footer__logo-box {
+    display: none;
+  }
+}
+
+.site-footer__logo-box > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+.site-footer__copyright-content {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-top: auto;
+}
+
+@media all and (max-width: 767px) {
+  .page-promo--index {
+    margin: 2rem 0;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .page-promo--index {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .page-promo > article {
   text-align: center;
+}
+
+.page-promo > article > header {
+  margin-bottom: 3rem;
 }
 
 @media all and (min-width: 768px) {
@@ -2009,14 +2088,20 @@ a.button {
 }
 
 .page-promo > article > header > h2 {
+  font-size: 1.8rem;
+  line-height: 1.33333;
   font-weight: 700;
 }
 
 @media all and (min-width: 768px) {
   .page-promo > article > header > h2 {
     font-size: 2.2rem;
-    line-height: 0.45455;
+    line-height: 1.18182;
   }
+}
+
+.page-promo > article > h1 {
+  margin-bottom: 3rem;
 }
 
 @media all and (min-width: 768px) {
@@ -2031,4 +2116,11 @@ a.button {
 
 .page-promo > article > p:not(:last-child) {
   margin-bottom: 2rem;
+}
+
+@media all and (max-width: 767px) {
+  .page-promo > article > p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
 }

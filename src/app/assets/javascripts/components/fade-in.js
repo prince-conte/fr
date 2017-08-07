@@ -11,7 +11,7 @@ $(window).on('load', function() {
 
         $(".js-page-body").addClass('fadeIn');
 
-        }, 1000);
+        }, 500);
 
     }, 1000);
 

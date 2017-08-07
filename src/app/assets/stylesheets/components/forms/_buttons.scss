@@ -3,10 +3,12 @@
 @if $enable-buttons == true {
     .button {
         display: inline-block;
-        padding: .5rem 1.5rem;
-        background: $color-light;
-        color: #fff;
+        padding: 1rem 1.5rem;
+        background: transparent;
+        border: 2px dashed $color-base;
+        color: $color-base;
         text-align: center;
+        transition: .6s;
 
         @at-root a#{&} {
             text-decoration: none;

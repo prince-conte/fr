@@ -27,7 +27,12 @@
             }
 
             > p {
-                @include text-large;
+                @include text-base;
+
+                &:not(:last-child) {
+                    margin-bottom: 3rem;
+                }
+
             }
 
             > footer {

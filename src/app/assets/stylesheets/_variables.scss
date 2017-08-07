@@ -2,33 +2,33 @@
 
 // Responsive
 $mq-breakpoints: ( // for example: xs, sm, md, lg, xl
-    'sm': 767px,
-    'md': 768px,
-    'lg': 1025px
+    'xs': 767px,
+    'sm': 768px,
+    'md': 1025px
 );
 
 $mq-indents: (
-    'sm': 1rem,
-    'md': 2rem,
-    'lg': 3rem
+    'xs': 1rem,
+    'sm': 2rem,
+    'md': 2rem
 );
 
 $mq-container-widths: (
+    'xs': 100%,
     'sm': 100%,
-    'md': 100%,
-    'lg': 1440px
+    'md': 1420px
 );
 
 $mq-container-indents: (
-    'sm': map-get($mq-indents, 'sm'),
-    'md': map-get($mq-indents, 'md'),
-    'lg': map-get($mq-indents, 'lg')
+    'xs': map-get($mq-indents, 'sm'),
+    'sm': map-get($mq-indents, 'md'),
+    'md': map-get($mq-indents, 'lg')
 );
 
 $mq-grid-gutters: (
-    'sm': map-get($mq-indents, 'sm'),
-    'md': map-get($mq-indents, 'md'),
-    'lg': map-get($mq-indents, 'lg')
+    'xs': map-get($mq-indents, 'sm'),
+    'sm': map-get($mq-indents, 'md'),
+    'md': map-get($mq-indents, 'lg')
 );
 
 // Not responsive
@@ -45,26 +45,29 @@ $border-radius-base:   .5rem;
 $border-radius-large: .75rem;
 
 // Colors
-$color-base:          #000;
+$color-base:          #121314;
 $color-light:    rgba($color-base, .8);
 $color-lighter:  rgba($color-base, .6);
 $color-lightest: rgba($color-base, .4);
 
-$color-brand:         #brand;
+$color-brand:         #5409ff;
 
 $color-error:         red;
 $color-warning:       orange;
 $color-success:       green;
 
 // Fonts
-$font-family-text:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-family-title: $font-family-text;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500|Roboto:400,700,900');
+
+$font-family-text:  "Roboto Mono","HelveticaNeue","Helvetica Neue",sans-serif;
+$font-family-title: "Roboto","HelveticaNeue","Helvetica Neue",sans-serif;
 $font-weight-text:  400;
 $font-weight-title: 700;
 
 // Forms
-$checkbox-size: 2rem;
-$radio-size:    2rem;
+$checkbox-size: 3rem;
+$radio-size:    3rem;
 
 // Links
 $color-link: rgba(blue, .8);

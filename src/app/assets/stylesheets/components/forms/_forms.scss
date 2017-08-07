@@ -1,0 +1,21 @@
+input,
+textarea,
+button,
+select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: 0;
+    -webkit-appearance: none;
+    outline: none;
+    background: transparent;
+    transition: $transition-duration-base;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+input[type=search] {
+    border-radius: 0;
+    -webkit-border-radius:0px;
+    -webkit-appearance: none;
+}

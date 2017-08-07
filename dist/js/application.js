@@ -87,6 +87,35 @@ createMq([['sm', 767], ['md', 768], ['lg', 1025]]);
 var TRANSITION_DURATION_BASE = 200;
 'use strict';
 
+// Debounced Resize() jQuery Plugin
+// https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+(function ($, sr) {
+    // debouncing function from John Hann
+    // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+    var debounce = function debounce(func, threshold, execAsap) {
+        var timeout;
+
+        return function debounced() {
+            var obj = this,
+                args = arguments;
+            function delayed() {
+                if (!execAsap) func.apply(obj, args);
+                timeout = null;
+            }
+
+            if (timeout) clearTimeout(timeout);else if (execAsap) func.apply(obj, args);
+
+            timeout = setTimeout(delayed, threshold || 100);
+        };
+    };
+
+    // smartresize
+    jQuery.fn[sr] = function (fn) {
+        return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
+    };
+})(jQuery, 'smartresize');
+'use strict';
+
 if (enable.jQueryUI.autocomplete === true) {
     var availableTags = ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme'];
     var $autocomplete = $('.js-autocomplete-input');
@@ -195,3 +224,30 @@ if (enable.components.wysiwyg === true) {
         $(this).wrap('<div class="wysiwyg__video"/>');
     });
 }
+'use strict';
+
+$(function () {
+
+    function footerInit() {
+        var windowHeight = $(window).height();
+        var headerHeight = $('.js-site-header').outerHeight();
+        var footerHeight = $('.js-site-footer').outerHeight();
+        var mainMinHeight = windowHeight - headerHeight;
+
+        $('.js-main').css('min-height', mainMinHeight).css('padding-bottom', footerHeight);
+    }
+
+    footerInit();
+
+    $(document).on('click touchend', '.js-open-online', function () {
+
+        $(this).toggleClass('is-active');
+        footerInit();
+
+        return false;
+    });
+
+    $(window).smartresize(function () {
+        footerInit();
+    });
+});

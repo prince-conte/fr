@@ -31,6 +31,10 @@
 
     &__navigate {
 
+        @include mq(xs) {
+            display: none;
+        }
+
         @include mq(sm) {
             display: flex;
         }
@@ -97,10 +101,6 @@
     &__content {
         display: flex;
         flex-direction: column;
-
-        @include mq(xs) {
-            margin-top: 2rem;
-        }
 
     }
 

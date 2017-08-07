@@ -453,6 +453,7 @@ html {
 body {
   font-size: 1.4rem;
   line-height: 1.5;
+  position: relative;
   min-height: 100vh;
   background: #fff;
   color: #121314;
@@ -892,6 +893,10 @@ input[type=search] {
   text-align: center;
   -webkit-transition: .6s;
   transition: .6s;
+}
+
+.mod_no-touchevents .button:hover, .mod_no-touchevents .button.hover {
+  border-color: #5409ff;
 }
 
 a.button {
@@ -1833,6 +1838,13 @@ a.button {
   display: block;
 }
 
+@media all and (min-width: 768px) {
+  .site-header__logo-box {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
 .site-header__logo-box > img {
   display: block;
   width: 100%;
@@ -1942,6 +1954,12 @@ a.button {
   }
 }
 
+@media all and (max-width: 767px) {
+  .site-footer__navigate {
+    display: none;
+  }
+}
+
 @media all and (min-width: 768px) {
   .site-footer__navigate {
     display: -webkit-box;
@@ -2017,12 +2035,6 @@ a.button {
           flex-direction: column;
 }
 
-@media all and (max-width: 767px) {
-  .site-footer__content {
-    margin-top: 2rem;
-  }
-}
-
 .site-footer__logo-box {
   width: 4rem;
   height: 4rem;
@@ -2075,6 +2087,7 @@ a.button {
 
 .page-promo > article {
   text-align: center;
+  padding: 2rem;
 }
 
 .page-promo > article > header {
@@ -2114,13 +2127,18 @@ a.button {
   text-transform: uppercase;
 }
 
-.page-promo > article > p:not(:last-child) {
-  margin-bottom: 2rem;
-}
-
 @media all and (max-width: 767px) {
   .page-promo > article > p {
     font-size: 1.2rem;
     line-height: 1.5;
+  }
+  .page-promo > article > p:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .page-promo > article > p:not(:last-child) {
+    margin-bottom: 4rem;
   }
 }

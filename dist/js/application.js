@@ -82,38 +82,9 @@ if (enable.doubleHover) {
 // Media queries (for example: xs, sm, md, lg, xl)
 // Integer: mq.sm.int
 // String:  Modernizr.mq(mq.sm.str);
-createMq([['sm', 767], ['md', 768], ['lg', 1025]]);
+createMq([['xs', 767], ['sm', 768], ['md', 1420]]);
 
 var TRANSITION_DURATION_BASE = 200;
-'use strict';
-
-// Debounced Resize() jQuery Plugin
-// https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-(function ($, sr) {
-    // debouncing function from John Hann
-    // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-    var debounce = function debounce(func, threshold, execAsap) {
-        var timeout;
-
-        return function debounced() {
-            var obj = this,
-                args = arguments;
-            function delayed() {
-                if (!execAsap) func.apply(obj, args);
-                timeout = null;
-            }
-
-            if (timeout) clearTimeout(timeout);else if (execAsap) func.apply(obj, args);
-
-            timeout = setTimeout(delayed, threshold || 100);
-        };
-    };
-
-    // smartresize
-    jQuery.fn[sr] = function (fn) {
-        return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
-    };
-})(jQuery, 'smartresize');
 'use strict';
 
 if (enable.jQueryUI.autocomplete === true) {
@@ -229,25 +200,110 @@ if (enable.components.wysiwyg === true) {
 $(function () {
 
     function footerInit() {
+
         var windowHeight = $(window).height();
         var headerHeight = $('.js-site-header').outerHeight();
         var footerHeight = $('.js-site-footer').outerHeight();
-        var mainMinHeight = windowHeight - headerHeight;
 
-        $('.js-main').css('min-height', mainMinHeight).css('padding-bottom', footerHeight);
+        if (Modernizr.mq(mq.sm.str)) {
+
+            var mainMinHeight = windowHeight - headerHeight;
+
+            $('.js-main').css('min-height', mainMinHeight).css('padding-bottom', footerHeight);
+        }
+
+        if (Modernizr.mq(mq.sm.str)) {
+
+            var mainMinHeight = windowHeight - headerHeight;
+
+            $('.js-main').css('min-height', mainMinHeight).css('padding-bottom', footerHeight);
+        }
+
+        if (Modernizr.mq(mq.xs.str)) {
+
+            var mainMinHeight = windowHeight;
+
+            $('.js-main').css('min-height', mainMinHeight).css('padding-bottom', footerHeight).css('padding-top', headerHeight);
+        }
     }
 
     footerInit();
-
-    $(document).on('click touchend', '.js-open-online', function () {
-
-        $(this).toggleClass('is-active');
-        footerInit();
-
-        return false;
-    });
 
     $(window).smartresize(function () {
         footerInit();
     });
 });
+'use strict';
+
+$(function () {
+
+    var mobileMenuFade = $('.js-mobile-menu-fade');
+    var mobileMenu = $('.js-mobile-menu');
+    var toggled = 0;
+
+    $(document).on('click', '.js-open-menu', function () {
+
+        // burger style
+
+        if (toggled == 0) {
+            $('.burgx3').stop().transition({ rotate: "45", "margin-top": "13px" });
+            $('.burgx2').stop().transition({ opacity: "0" }, "fast");
+            $('.burgx').stop().transition({ rotate: "-45", "margin-top": "13px" });
+            toggled++;
+        } else {
+            $('.burgx3').stop().transition({ rotate: "+=135", "margin-top": "3px" });
+            $('.burgx2').transition({ opacity: "1" }, "fast");
+            $('.burgx').stop().transition({ rotate: "-=135", "margin-top": "23px" });
+            toggled--;
+        }
+
+        // menu
+
+        if ($(this).hasClass('is-active')) {
+
+            mobileMenu.removeClass('is-active');
+
+            setTimeout(function () {
+
+                mobileMenuFade.fadeOut(500);
+            }, 500);
+
+            $(this).removeClass('is-active');
+        } else {
+
+            mobileMenuFade.fadeIn(500);
+
+            setTimeout(function () {
+
+                mobileMenu.addClass('is-active');
+            }, 500);
+
+            $(this).addClass('is-active');
+        }
+
+        return false;
+    });
+
+    $(document).on('click', '.js-close-menu', function () {
+
+        mobileMenu.removeClass('is-active');
+
+        setTimeout(function () {
+
+            mobileMenuFade.fadeOut(500);
+        }, 500);
+
+        $(this).removeClass('is-active');
+        $('.js-open-menu').removeClass('is-active');
+
+        // burger close
+
+        $('.burgx3').stop().transition({ rotate: "+=135", "margin-top": "3px" });
+        $('.burgx2').transition({ opacity: "1" }, "fast");
+        $('.burgx').stop().transition({ rotate: "-=135", "margin-top": "23px" });
+        toggled--;
+    });
+});
+"use strict";
+
+$(function () {});

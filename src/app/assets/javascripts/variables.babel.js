@@ -2,9 +2,9 @@
 // Integer: mq.sm.int
 // String:  Modernizr.mq(mq.sm.str);
 createMq([
-    ['sm',  767],
-    ['md',  768],
-    ['lg', 1025]
+    ['xs',  767],
+    ['sm',  768],
+    ['md', 1420]
 ]);
 
 const TRANSITION_DURATION_BASE = 200;

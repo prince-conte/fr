@@ -3,7 +3,11 @@
     &--index {
 
         @include mq(xs) {
-            margin: 2rem 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%,-50%);
         }
 
         @include mq(sm) {
@@ -14,11 +18,7 @@
             justify-content: center;
             align-items: center;
         }
-
     }
-
-
-
 
 
     > article {

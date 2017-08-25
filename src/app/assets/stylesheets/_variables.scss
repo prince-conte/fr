@@ -4,7 +4,7 @@
 $mq-breakpoints: ( // for example: xs, sm, md, lg, xl
     'xs': 767px,
     'sm': 768px,
-    'md': 1025px
+    'md': 1420px
 );
 
 $mq-indents: (
@@ -15,7 +15,7 @@ $mq-indents: (
 
 $mq-container-widths: (
     'xs': 100%,
-    'sm': 100%,
+    'sm': 768px,
     'md': 1420px
 );
 
@@ -51,6 +51,7 @@ $color-lighter:  rgba($color-base, .6);
 $color-lightest: rgba($color-base, .4);
 
 $color-brand:         #5409ff;
+$color-sound:         #9280bc;
 
 $color-error:         red;
 $color-warning:       orange;

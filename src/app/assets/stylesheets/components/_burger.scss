@@ -1,0 +1,49 @@
+.burger {
+    position: relative;
+    display: block;
+    height: 3rem;
+    width: 3.3rem;
+    cursor: pointer;
+
+    &::before {
+        @include font(1.4rem,1.4rem);
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 2rem);
+        transform: translateY(-50%);
+        font-family: $font-family-text;
+        color: $color-base;
+        content: 'menu'
+    }
+
+    &.is-active {
+        &::before {
+            content: 'close'
+        }
+    }
+
+}
+
+.burgx, .burgx2, .burgx3 {
+    margin-top: .3rem;
+    background: #201610;
+    width: 3.3rem;
+    height: .4rem;
+    position: absolute;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+
+.burgx2 {
+    margin-top: 1.3rem;
+}
+.burgx3 {
+    margin-top: 2.3rem;
+
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}

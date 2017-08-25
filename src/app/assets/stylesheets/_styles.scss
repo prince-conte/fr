@@ -39,6 +39,7 @@ main {
 // Links
 a {
     color: $color-link;
+    text-decoration: none;
     transition: all $transition-duration-base;
 
     &.is-current {

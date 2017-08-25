@@ -30,6 +30,11 @@
 
 .fadeIn {
     opacity: 1;
+    transition: all $transition-duration-base;
+}
+
+.fadeOut {
+    opacity: 0;
 }
 
 ::selection {

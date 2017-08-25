@@ -5,8 +5,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    z-index: 115;
 
     @include mq(xs) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: row-reverse;
         padding: 3rem;
     }
 
@@ -29,6 +35,14 @@
             height: auto;
             border-radius: 50%;
             vertical-align: top;
+        }
+    }
+
+    &__burger-box {
+        display: none;
+
+        @include mq(xs) {
+            display: block;
         }
     }
 

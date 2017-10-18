@@ -1,27 +1,13 @@
 .page-promo {
 
-    &--index {
-
-        @include mq(xs) {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%,-50%);
-        }
-
-        @include mq(sm) {
-            position: absolute;
-            width: 100%;
-            height: 70%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    @include mq(sm) {
+        padding-top: 27rem;
     }
 
 
-    > article {
+
+    article {
+        display: block;
         text-align: center;
         padding: 2rem;
 

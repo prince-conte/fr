@@ -2,12 +2,13 @@
 
 @if $enable-buttons == true {
     .button {
-        @include interact(border-color, $color-brand);
+        @include interact(background,$color-light);
+        position: relative;
         display: inline-block;
-        padding: 1rem 1.5rem;
-        background: transparent;
-        border: 2px dashed $color-base;
-        color: $color-base;
+        padding: 1rem 2rem;
+        background: #000;
+        //border: 2px dashed $color-base;
+        color: #fff;
         text-align: center;
         transition: .6s;
 
@@ -19,9 +20,17 @@
             opacity: .2;
         }
 
-        &--block {
-            display: block;
-            width: 100%;
+        &:active {
+            transform: translateY(.2rem);
         }
+
+
+        &--medium {
+            padding: 1rem 3rem;
+            min-width: 12rem;
+        }
+
     }
 }
+
+

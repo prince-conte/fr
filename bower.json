@@ -21,5 +21,9 @@
     "normalize-css": "^7.0.0",
     "jquery-ui": "^1.12.1",
     "jquery.transit": "git://github.com/rstacruz/jquery.transit#^0.9.12"
+  },
+  "dependencies": {
+    "smooth-scrollbar": "^8.1.7",
+    "slick-carousel": "^1.8.1"
   }
 }

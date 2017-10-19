@@ -8,3 +8,5 @@ createMq([
 ]);
 
 const TRANSITION_DURATION_BASE = 200;
+
+const $siteHeader = $('.js-site-header');

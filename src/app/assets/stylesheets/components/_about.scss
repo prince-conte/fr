@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.about {
+
+    &__grid {
+
+
+        @include mq(md) {
+            @include grid(x,flex-start,flex-start);
+        }
+
+    }
+
+    &__column {
+
+        @include mq(xs) {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @include mq(sm) {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @include mq(md) {
+            @include grid-col();
+            @include col-size(1/3);
+
+        }
+
+        > h4 {
+            margin-bottom: 3rem;
+        }
+
+    }
+
+}

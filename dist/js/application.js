@@ -85,6 +85,8 @@ if (enable.doubleHover) {
 createMq([['xs', 767], ['sm', 768], ['md', 1420]]);
 
 var TRANSITION_DURATION_BASE = 200;
+
+var $siteHeader = $('.js-site-header');
 'use strict';
 
 if (enable.jQueryUI.autocomplete === true) {
@@ -307,3 +309,35 @@ $(function () {
 "use strict";
 
 $(function () {});
+'use strict';
+
+$(function () {
+
+    if (Modernizr.mq(mq.xs.str)) {
+
+        $('.js-projects').slick({
+            infinite: true,
+            slidesToShow: 1,
+            dots: false,
+            arrows: false,
+            slidesToScroll: 1
+        });
+    }
+});
+'use strict';
+
+$(function () {
+
+    $(window).scroll(function () {
+
+        var headerHeight = $siteHeader.outerHeight();
+
+        if ($(this).scrollTop() >= headerHeight) {
+            $('.site-main').addClass('site-main-scroll-mod');
+            $siteHeader.addClass('site-header-scroll-mod');
+        } else {
+            $('.site-main').removeClass('site-main-scroll-mod');
+            $siteHeader.removeClass('site-header-scroll-mod');
+        }
+    });
+});

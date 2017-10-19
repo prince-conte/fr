@@ -364,8 +364,12 @@
 
 @mixin h3($font-weight: $font-weight-title) {
     @include heading;
-    @include font(4rem, 4rem);
+    @include font(3.2rem, 3.8rem);
     font-weight: $font-weight;
+
+    @include mq(sm) {
+        @include font(4rem, 4rem);
+    }
 }
 
 @mixin h4($font-weight: $font-weight-title) {

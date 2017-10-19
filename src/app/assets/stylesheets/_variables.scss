@@ -8,9 +8,9 @@ $mq-breakpoints: ( // for example: xs, sm, md, lg, xl
 );
 
 $mq-indents: (
-    'xs': 1rem,
+    'xs': 2rem,
     'sm': 2rem,
-    'md': 2rem
+    'md': 3rem
 );
 
 $mq-container-widths: (
@@ -20,15 +20,15 @@ $mq-container-widths: (
 );
 
 $mq-container-indents: (
-    'xs': map-get($mq-indents, 'sm'),
-    'sm': map-get($mq-indents, 'md'),
-    'md': map-get($mq-indents, 'lg')
+    'xs': map-get($mq-indents, 'xs'),
+    'sm': map-get($mq-indents, 'sm'),
+    'md': map-get($mq-indents, 'md')
 );
 
 $mq-grid-gutters: (
-    'xs': map-get($mq-indents, 'sm'),
-    'sm': map-get($mq-indents, 'md'),
-    'md': map-get($mq-indents, 'lg')
+    'xs': map-get($mq-indents, 'xs'),
+    'sm': map-get($mq-indents, 'sm'),
+    'md': map-get($mq-indents, 'md')
 );
 
 // Not responsive

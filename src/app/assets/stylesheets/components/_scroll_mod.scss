@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.site-main-scroll-mod {
+    background: #e7e7e7;
+}
+
+.site-header-scroll-mod {
+
+    @include mq(sm) {
+        > .site-header__logo-box {
+            @include size(4rem);
+        }
+    }
+
+
+}

@@ -1,4 +1,5 @@
 @import "../vendors/normalize-css/normalize";
+@import "../vendors/slick-carousel/slick/slick.scss";
 
 @import "config";
 @import "functions";
@@ -37,7 +38,11 @@
 @import "components/site_footer";
 
 
+@import "components/scroll_mod";
 @import "components/burger";
 @import "components/page-promo";
 @import "components/section_box";
+@import "components/projects";
+@import "components/about";
+@import "components/contacts";
 

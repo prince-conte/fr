@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 .site-main {
+    transition: background .6s;
+
     @if $enable-sticky-footer == true {
         flex: 1;
     }

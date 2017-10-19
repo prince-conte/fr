@@ -437,6 +437,108 @@ template {
   display: none;
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -546,13 +648,20 @@ h2 a {
 
 h3 {
   font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", sans-serif;
-  font-size: 4rem;
-  line-height: 1;
+  font-size: 3.2rem;
+  line-height: 1.1875;
   font-weight: 700;
 }
 
 h3 a {
   text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  h3 {
+    font-size: 4rem;
+    line-height: 1;
+  }
 }
 
 h4 {
@@ -1166,6 +1275,13 @@ a.button {
   }
 }
 
+@media all and (min-width: 1420px) {
+  .container {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
 .icon {
   fill: #121314;
   fill-rule: evenodd;
@@ -1190,7 +1306,7 @@ a.button {
 @media all and (max-width: 767px) {
   .nested-lists ol {
     margin-right: 0rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
 }
 
@@ -1204,13 +1320,13 @@ a.button {
 @media all and (min-width: 1420px) {
   .nested-lists ol {
     margin-right: 0rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
 }
 
 @media all and (max-width: 767px) {
   .nested-lists ol {
-    margin-top: 0.33333rem;
+    margin-top: 0.66667rem;
     margin-bottom: 0rem;
   }
 }
@@ -1224,14 +1340,14 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .nested-lists ol {
-    margin-top: 0.66667rem;
+    margin-top: 1rem;
     margin-bottom: 0rem;
   }
 }
 
 @media all and (max-width: 767px) {
   .nested-lists li:not(:first-child) {
-    margin-top: 0.33333rem;
+    margin-top: 0.66667rem;
   }
   .nested-lists li:not(:last-child) {
     margin-bottom: 0rem;
@@ -1249,7 +1365,7 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .nested-lists li:not(:first-child) {
-    margin-top: 0.66667rem;
+    margin-top: 1rem;
   }
   .nested-lists li:not(:last-child) {
     margin-bottom: 0rem;
@@ -1339,10 +1455,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg > h1:not(:first-child), .wysiwyg h2:not(:first-child), .wysiwyg h3:not(:first-child), .wysiwyg h4:not(:first-child), .wysiwyg h5:not(:first-child), .wysiwyg h6:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg > h1:not(:last-child), .wysiwyg h2:not(:last-child), .wysiwyg h3:not(:last-child), .wysiwyg h4:not(:last-child), .wysiwyg h5:not(:last-child), .wysiwyg h6:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1357,10 +1473,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > h1:not(:first-child), .wysiwyg h2:not(:first-child), .wysiwyg h3:not(:first-child), .wysiwyg h4:not(:first-child), .wysiwyg h5:not(:first-child), .wysiwyg h6:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg > h1:not(:last-child), .wysiwyg h2:not(:last-child), .wysiwyg h3:not(:last-child), .wysiwyg h4:not(:last-child), .wysiwyg h5:not(:last-child), .wysiwyg h6:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -1371,10 +1487,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg > blockquote:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg > blockquote:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1389,16 +1505,16 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > blockquote:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg > blockquote:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
 @media all and (min-width: 1420px) {
   .wysiwyg > blockquote {
-    padding-left: 2rem;
+    padding-left: 3rem;
   }
 }
 
@@ -1417,10 +1533,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg > figure:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg > figure:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1435,10 +1551,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > figure:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg > figure:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -1457,10 +1573,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg > img:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg > img:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1475,19 +1591,19 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > img:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg > img:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
 @media all and (max-width: 767px) {
   .wysiwyg > dl:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .wysiwyg > dl:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1502,10 +1618,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > dl:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .wysiwyg > dl:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -1518,7 +1634,7 @@ a.button {
     margin-top: 0rem;
   }
   .wysiwyg > dl > dt:not(:last-child) {
-    margin-bottom: 0.33333rem;
+    margin-bottom: 0.66667rem;
   }
 }
 
@@ -1536,21 +1652,21 @@ a.button {
     margin-top: 0rem;
   }
   .wysiwyg > dl > dt:not(:last-child) {
-    margin-bottom: 0.66667rem;
-  }
-}
-
-@media all and (max-width: 767px) {
-  .wysiwyg > ol:not(:first-child),
-  .wysiwyg > ul:not(:first-child) {
-    margin-top: 1rem;
-  }
-  .wysiwyg > ol:not(:last-child),
-  .wysiwyg > ul:not(:last-child) {
     margin-bottom: 1rem;
   }
 }
 
+@media all and (max-width: 767px) {
+  .wysiwyg > ol:not(:first-child),
+  .wysiwyg > ul:not(:first-child) {
+    margin-top: 2rem;
+  }
+  .wysiwyg > ol:not(:last-child),
+  .wysiwyg > ul:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
 @media all and (min-width: 768px) {
   .wysiwyg > ol:not(:first-child),
   .wysiwyg > ul:not(:first-child) {
@@ -1565,11 +1681,11 @@ a.button {
 @media all and (min-width: 1420px) {
   .wysiwyg > ol:not(:first-child),
   .wysiwyg > ul:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .wysiwyg > ol:not(:last-child),
   .wysiwyg > ul:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -1577,7 +1693,7 @@ a.button {
   .wysiwyg > ol:not([class]) ol:not(:first-child), .wysiwyg > ol:not([class]) ul:not(:first-child),
   .wysiwyg > ul:not([class]) ol:not(:first-child),
   .wysiwyg > ul:not([class]) ul:not(:first-child) {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
   .wysiwyg > ol:not([class]) ol:not(:last-child), .wysiwyg > ol:not([class]) ul:not(:last-child),
   .wysiwyg > ul:not([class]) ol:not(:last-child),
@@ -1603,7 +1719,7 @@ a.button {
   .wysiwyg > ol:not([class]) ol:not(:first-child), .wysiwyg > ol:not([class]) ul:not(:first-child),
   .wysiwyg > ul:not([class]) ol:not(:first-child),
   .wysiwyg > ul:not([class]) ul:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   .wysiwyg > ol:not([class]) ol:not(:last-child), .wysiwyg > ol:not([class]) ul:not(:last-child),
   .wysiwyg > ul:not([class]) ol:not(:last-child),
@@ -1616,7 +1732,7 @@ a.button {
   .wysiwyg > ol:not([class]) li,
   .wysiwyg > ul:not([class]) li {
     margin-right: 0rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
 }
 
@@ -1632,14 +1748,14 @@ a.button {
   .wysiwyg > ol:not([class]) li,
   .wysiwyg > ul:not([class]) li {
     margin-right: 0rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
 }
 
 @media all and (max-width: 767px) {
   .wysiwyg > ol:not([class]) li:not(:first-child):not(:first-child),
   .wysiwyg > ul:not([class]) li:not(:first-child):not(:first-child) {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
   .wysiwyg > ol:not([class]) li:not(:first-child):not(:last-child),
   .wysiwyg > ul:not([class]) li:not(:first-child):not(:last-child) {
@@ -1661,7 +1777,7 @@ a.button {
 @media all and (min-width: 1420px) {
   .wysiwyg > ol:not([class]) li:not(:first-child):not(:first-child),
   .wysiwyg > ul:not([class]) li:not(:first-child):not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   .wysiwyg > ol:not([class]) li:not(:first-child):not(:last-child),
   .wysiwyg > ul:not([class]) li:not(:first-child):not(:last-child) {
@@ -1695,10 +1811,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg > p:not(:first-child) {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .wysiwyg > p:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1713,10 +1829,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg > p:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .wysiwyg > p:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -1726,10 +1842,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg__table:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg__table:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1744,10 +1860,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg__table:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg__table:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -1790,10 +1906,10 @@ a.button {
 
 @media all and (max-width: 767px) {
   .wysiwyg__video:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .wysiwyg__video:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -1808,10 +1924,10 @@ a.button {
 
 @media all and (min-width: 1420px) {
   .wysiwyg__video:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
   .wysiwyg__video:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -1866,6 +1982,8 @@ a.button {
   width: 4rem;
   height: 4rem;
   display: block;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 @media all and (min-width: 768px) {
@@ -2051,6 +2169,8 @@ a.button {
 }
 
 .site-main {
+  -webkit-transition: background .6s;
+  transition: background .6s;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2204,6 +2324,17 @@ a.button {
   margin-top: auto;
 }
 
+.site-main-scroll-mod {
+  background: #e7e7e7;
+}
+
+@media all and (min-width: 768px) {
+  .site-header-scroll-mod > .site-header__logo-box {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 .burger {
   position: relative;
   display: block;
@@ -2253,9 +2384,25 @@ a.button {
   -o-transform: rotate(180deg);
 }
 
+.page-promo:not(:last-child) {
+  padding-bottom: 4rem;
+}
+
 @media all and (min-width: 768px) {
   .page-promo {
+    padding-top: 15rem;
+  }
+  .page-promo:not(:last-child) {
+    padding-bottom: 10rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .page-promo {
     padding-top: 27rem;
+  }
+  .page-promo:not(:last-child) {
+    padding-bottom: 20rem;
   }
 }
 
@@ -2325,5 +2472,171 @@ a.button {
 @media all and (min-width: 768px) {
   .section-box {
     margin: 7rem 0;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .section-box {
+    margin: 10rem 0;
+  }
+}
+
+.projects > article {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+@media all and (min-width: 768px) {
+  .projects__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.projects__item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+@media all and (max-width: 767px) {
+  .projects__item {
+    height: 32rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .projects__item {
+    width: 50%;
+    height: 18rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .projects__item {
+    width: 25%;
+    height: 30rem;
+  }
+  .projects__item:hover .projects__item-image {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  .projects__item:hover .projects__item-fade {
+    background: rgba(18, 19, 20, 0.6);
+  }
+}
+
+.projects__item-fade {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(18, 19, 20, 0.8);
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.projects__item-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media all and (min-width: 1420px) {
+  .about__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+@media all and (min-width: 1420px) and (max-width: 767px) {
+  .about__grid {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 768px) {
+  .about__grid {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 1420px) {
+  .about__grid {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .about__column:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .about__column:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .about__column {
+    width: 33.33333%;
+  }
+}
+
+@media all and (min-width: 1420px) and (max-width: 767px) {
+  .about__column {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 768px) {
+  .about__column {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 1420px) {
+  .about__column {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.about__column > h4 {
+  margin-bottom: 3rem;
+}
+
+@media all and (min-width: 768px) {
+  .contacts > article {
+    text-align: center;
   }
 }

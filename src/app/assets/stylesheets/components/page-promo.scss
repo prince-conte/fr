@@ -1,7 +1,25 @@
 .page-promo {
 
+    &:not(:last-child) {
+        padding-bottom: 4rem;
+    }
+
     @include mq(sm) {
+        padding-top: 15rem;
+
+
+        &:not(:last-child) {
+            padding-bottom: 10rem;
+        }
+    }
+
+    @include mq(md) {
         padding-top: 27rem;
+
+
+        &:not(:last-child) {
+            padding-bottom: 20rem;
+        }
     }
 
 

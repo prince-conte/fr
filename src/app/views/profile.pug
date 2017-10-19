@@ -14,13 +14,65 @@ block main
 
                 h1 About Me
                 p Francesco Lucania I'm a Frontend developer in Russia currently working at <a href='#'>Coalla</a>.
-                a.button.button--medium(href='#') Next
+                p October 2017
+
+    .projects
+        article.wysiwyg
+            h3 Last Projects
+
+        .projects__grid.js-projects
+
+            .projects__item
+                .projects__item-image(style='background-image: url(img/projects/1.png)')
+                .projects__item-fade
+
+
+            .projects__item
+                .projects__item-image(style='background-image: url(img/projects/2.jpg)')
+                .projects__item-fade
+
+            .projects__item
+                .projects__item-image(style='background-image: url(img/projects/3.jpg)')
+                .projects__item-fade
+
+            .projects__item
+                .projects__item-image(style='background-image: url(img/projects/4.jpg)')
+                .projects__item-fade
+
 
     .section-box
         .container
-            article.wysiwyg.text-center
-                header
+            .about
+                .about__grid
 
-                    h2 Projects
-                p Francesco Lucania I'm a Frontend developer in Russia currently working at <a href='#'>Coalla</a>.
-                a.button.button--medium(href='#') Next
+                    article.about__column.wysiwyg
+                        h4 Technologies
+
+                        ul
+
+                            li html: jade/pug, haml
+
+                            li css: sass, stylus, bem
+
+                            li Java Script: jQuery
+
+                            li Gulp, Webpack
+
+
+                    article.about__column.wysiwyg
+                        h4 Services
+
+                        p frontend development, responsive, minimal design, animation, optimization
+
+
+                    article.about__column.wysiwyg
+                        h4 I like...
+                        p I provide creative solutions for digital services and products, through a user-centered and design-thinking driven approach.
+
+
+    .section-box
+        .container
+            .contacts
+                article.wysiwyg
+                    h3 Make contact with&nbsp;us
+                    p Email is the best way, to get in touch please use the form or email us at <a href='mailto:francescolucaniacom@gmail.com'>francescolucaniacom@gmail.com</a>

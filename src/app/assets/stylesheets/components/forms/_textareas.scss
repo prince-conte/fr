@@ -5,8 +5,8 @@
         > textarea {
             display: block;
             width: 100%;
-            padding: .5rem .75rem;
-            border: 1px solid $color-lightest;
+            padding: 1.2rem .8rem 1.2rem;
+            border-bottom: 1px dashed $color-base;
 
             &:disabled {
                 opacity: .2;

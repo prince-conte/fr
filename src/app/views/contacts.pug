@@ -1,0 +1,40 @@
+extends layouts/application
+
+block title
+    title Index / Neo
+
+block main
+    .page-promo.page-promo--contacts
+        .container
+            article
+                header
+                    h2 03: Contacts
+
+
+                h1 Make contact with us.
+
+                p Email is the best way, to get in touch please use the form or email us at <a href='mailto:francescolucaniacom@gmail.com'>francescolucaniacom@gmail.com</a>
+
+            .contacts-form
+                .contacts-form__grid
+
+                    .contacts-form__column
+                        .input
+                            input(type='text' placeholder='Name')
+
+                    .contacts-form__column
+                        .input
+                            input(type='text' placeholder='Company')
+
+                    .contacts-form__column
+                        .input
+                            input(type='text' placeholder='E-mail')
+
+
+                .textarea
+
+                    textarea(placeholder='Message...')
+
+                .contacts-form__button-block
+                    button.button.button--medium send.
+

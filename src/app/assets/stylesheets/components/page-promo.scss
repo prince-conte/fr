@@ -4,6 +4,19 @@
         padding-bottom: 4rem;
     }
 
+    &--contacts {
+        margin-bottom: 4rem;
+
+        @include mq(sm) {
+            margin-bottom: 7rem;
+        }
+
+        @include mq(md) {
+            margin-bottom: 10rem;
+        }
+
+    }
+
     @include mq(sm) {
         padding-top: 15rem;
 

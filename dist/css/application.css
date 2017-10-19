@@ -1225,8 +1225,8 @@ a.button {
 .textarea > textarea {
   display: block;
   width: 100%;
-  padding: .5rem .75rem;
-  border: 1px solid rgba(18, 19, 20, 0.4);
+  padding: 1.2rem .8rem 1.2rem;
+  border-bottom: 1px dashed #121314;
 }
 
 .textarea > textarea:disabled {
@@ -2388,6 +2388,22 @@ a.button {
   padding-bottom: 4rem;
 }
 
+.page-promo--contacts {
+  margin-bottom: 4rem;
+}
+
+@media all and (min-width: 768px) {
+  .page-promo--contacts {
+    margin-bottom: 7rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .page-promo--contacts {
+    margin-bottom: 10rem;
+  }
+}
+
 @media all and (min-width: 768px) {
   .page-promo {
     padding-top: 15rem;
@@ -2639,4 +2655,104 @@ a.button {
   .contacts > article {
     text-align: center;
   }
+}
+
+@media all and (min-width: 768px) {
+  .contacts-form {
+    margin: 6rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .contacts-form {
+    margin: 8rem 16rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .contacts-form__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+@media all and (min-width: 1420px) and (max-width: 767px) {
+  .contacts-form__grid {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 768px) {
+  .contacts-form__grid {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 1420px) {
+  .contacts-form__grid {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .contacts-form__column:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .contacts-form__column {
+    width: 33.33333%;
+  }
+}
+
+@media all and (min-width: 1420px) and (max-width: 767px) {
+  .contacts-form__column {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 768px) {
+  .contacts-form__column {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 1420px) and (min-width: 1420px) {
+  .contacts-form__column {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.contacts-form textarea {
+  display: block;
+  margin-top: 4rem;
+  width: 100%;
+  border: 1px dashed #121314;
+}
+
+.contacts-form__button-block {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.contacts-form__button-block > .button {
+  display: inline-block;
 }

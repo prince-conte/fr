@@ -2,6 +2,7 @@
 
 @if $enable-inputs == true {
     .input {
+        position: relative;
         > input {
             display: block;
             width: 100%;
@@ -11,13 +12,24 @@
             &:disabled {
                 opacity: .2;
             }
+
         }
 
         // Invalid
-        &--invalid {
+        &.error {
             > input {
                 border-color: $color-error;
             }
+        }
+
+        > label.error {
+            @include text-small;
+            @include ellipsis();
+            position: absolute;
+            display: block;
+            bottom: -2rem;
+            left: 0;
+            color: $color-error;
         }
     }
 }

@@ -1092,6 +1092,10 @@ a.button {
   border-color: red;
 }
 
+.input {
+  position: relative;
+}
+
 .input > input {
   display: block;
   width: 100%;
@@ -1103,8 +1107,26 @@ a.button {
   opacity: .2;
 }
 
-.input--invalid > input {
+.input.error > input {
   border-color: red;
+}
+
+.input > label.error {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  position: absolute;
+  display: block;
+  bottom: -2rem;
+  left: 0;
+  color: red;
 }
 
 .label--has-checkbox {
@@ -1235,6 +1257,24 @@ a.button {
 
 .textarea--invalid > textarea {
   border-color: red;
+}
+
+.textarea > label.error {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  position: absolute;
+  display: block;
+  bottom: -2rem;
+  left: 0;
+  color: red;
 }
 
 .container {
@@ -2657,6 +2697,12 @@ a.button {
   }
 }
 
+.contacts-form {
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 @media all and (min-width: 768px) {
   .contacts-form {
     margin: 6rem;
@@ -2667,6 +2713,16 @@ a.button {
   .contacts-form {
     margin: 8rem 16rem;
   }
+}
+
+.contacts-form.is-active-message .contacts-form__message {
+  opacity: 1;
+  z-index: 10;
+}
+
+.contacts-form__body {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 @media all and (min-width: 1420px) {
@@ -2755,4 +2811,54 @@ a.button {
 
 .contacts-form__button-block > .button {
   display: inline-block;
+}
+
+.contacts-form__error {
+  display: none;
+}
+
+.contacts-form__message {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: -1;
+}
+
+.contacts-form__message-title {
+  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", sans-serif;
+  font-size: 3.2rem;
+  line-height: 1.1875;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+.contacts-form__message-title a {
+  text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  .contacts-form__message-title {
+    font-size: 4rem;
+    line-height: 1;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .contacts-form__message-title {
+    margin-bottom: 4rem;
+  }
 }

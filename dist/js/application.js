@@ -328,6 +328,102 @@ $(function () {
 
 $(function () {
 
+    $(document).on('change', '#form input', function () {
+
+        setTimeout(function () {
+
+            if ($('#form .error').is(':visible')) {
+
+                $('#send').prop('disabled', true);
+
+                return false;
+            } else {
+                $('#send').prop('disabled', false);
+            }
+        }, 500);
+    });
+
+    $(document).on('click', '#send', function () {
+
+        if ($('#form .error').is(':visible')) {
+
+            return false;
+        } else {
+
+            var name = $("#name").val();
+            var company = $("#company").val();
+            var email = $("#email").val();
+            var message = $("#message").val();
+
+            $.post('mail.php', { 'message': message, 'name': name, 'company': company, 'email': email }, function (data) {
+                if (data == 1) {
+
+                    $('.js-form-body').css('opacity', '0');
+                    $('#form').addClass('is-active-message');
+                } else {
+                    return false;
+                }
+            });
+        }
+
+        return false;
+    });
+
+    $(document).on('click', '.js-continue', function () {
+
+        $("#form")[0].reset();
+
+        $('#form').removeClass('is-active-message');
+        $('.js-form-body').css('opacity', '1');
+
+        return false;
+    });
+});
+"use strict";
+
+$("#form").validate({
+
+    rules: {
+
+        name: {
+            required: true,
+            minlength: 4,
+            maxlength: 16
+        },
+
+        email: {
+            required: true,
+            minlength: 6,
+            maxlength: 50
+        },
+
+        message: {
+            required: true
+        }
+    },
+
+    messages: {
+
+        name: {
+            required: "Required",
+            minlength: "At least 4 characters",
+            maxlength: "max 16 characters"
+        },
+
+        mail: {
+            required: "Required"
+        },
+
+        message: {
+            required: "Required"
+        }
+    }
+
+});
+'use strict';
+
+$(function () {
+
     $(window).scroll(function () {
 
         var headerHeight = $siteHeader.outerHeight();

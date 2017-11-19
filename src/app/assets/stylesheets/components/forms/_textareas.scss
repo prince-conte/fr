@@ -19,5 +19,16 @@
                 border-color: $color-error;
             }
         }
+
+        > label.error {
+            @include text-small;
+            @include ellipsis();
+            position: absolute;
+            display: block;
+            bottom: -2rem;
+            left: 0;
+            color: $color-error;
+        }
+
     }
 }

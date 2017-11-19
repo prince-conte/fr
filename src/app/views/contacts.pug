@@ -15,26 +15,32 @@ block main
 
                 p Email is the best way, to get in touch please use the form or email us at <a href='mailto:francescolucaniacom@gmail.com'>francescolucaniacom@gmail.com</a>
 
-            .contacts-form
-                .contacts-form__grid
+            form.contacts-form(method="post" action="" id="form")
+                .contacts-form__body.js-form-body
+                    .contacts-form__grid
 
-                    .contacts-form__column
-                        .input
-                            input(type='text' placeholder='Name')
+                        .contacts-form__column
+                            .input
+                                input#name(type="text" name="name" value="" placeholder='Name' required)
 
-                    .contacts-form__column
-                        .input
-                            input(type='text' placeholder='Company')
+                        .contacts-form__column
+                            .input
+                                input#company(type='text' name="company" value="" placeholder='Company')
 
-                    .contacts-form__column
-                        .input
-                            input(type='text' placeholder='E-mail')
+                        .contacts-form__column
+                            .input
+                                input#email(type="email" name="email" value="" placeholder='E-mail' required)
+
+                    .textarea
+                        textarea#message(name="message" placeholder='Message...' required)
+
+                    .contacts-form__button-block
+                        button.button.button--medium#send(type="submit") send.
+
+                .contacts-form__message
+                    article.contacts-form__message-body
+                        h5.contacts-form__message-title Thanks =)...
+                        a.button.button--medium.js-continue(href='#') continue.
 
 
-                .textarea
-
-                    textarea(placeholder='Message...')
-
-                .contacts-form__button-block
-                    button.button.button--medium send.
 

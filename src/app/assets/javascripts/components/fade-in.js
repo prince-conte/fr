@@ -31,15 +31,4 @@ $(function () {
 
     }, 1000);
 
-    $(window).smartresize(function () {
-
-        $(".js-page-body").addClass('fadeOut');
-        $(".js-page-body").removeClass('fadeIn')
-            .removeClass('fadeOut');
-
-        $(".js-page-loading").fadeIn(300);
-
-        loadPage();
-    });
-
 });

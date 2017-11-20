@@ -39,6 +39,12 @@
             }
         }
 
+        @include mq(sm) {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+
         @include mq(md) {
             @include grid-col();
             @include col-size(1/3);

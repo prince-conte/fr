@@ -1,7 +1,7 @@
 extends layouts/application
 
 block title
-    title Index / Neo
+    title Profile
 
 block main
 
@@ -22,21 +22,21 @@ block main
 
         .projects__grid.js-projects
 
-            .projects__item
-                .projects__item-image(style='background-image: url(img/projects/1.png)')
+            a.projects__item(href='#')
+                .projects__item-image(style='background-image: url(img/projects/4.jpg)')
                 .projects__item-fade
 
 
-            .projects__item
-                .projects__item-image(style='background-image: url(img/projects/2.jpg)')
-                .projects__item-fade
-
-            .projects__item
+            a.projects__item(href='#')
                 .projects__item-image(style='background-image: url(img/projects/3.jpg)')
                 .projects__item-fade
 
-            .projects__item
-                .projects__item-image(style='background-image: url(img/projects/4.jpg)')
+            a.projects__item(href='#')
+                .projects__item-image(style='background-image: url(img/projects/2.jpg)')
+                .projects__item-fade
+
+            a.projects__item(href='#')
+                .projects__item-image(style='background-image: url(img/projects/1.jpg)')
                 .projects__item-fade
 
 

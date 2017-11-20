@@ -87,6 +87,7 @@
                 }
 
                 > a.is-current {
+                    pointer-events: none;
                     color: $color-lightest;
 
                     &::after {

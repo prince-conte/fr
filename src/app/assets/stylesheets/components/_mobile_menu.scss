@@ -47,6 +47,10 @@
                 display: block;
                 padding: .3rem 1rem;
 
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+
                 &:hover {
                     a::after {
                         width: 100%;
@@ -80,7 +84,9 @@
                 }
 
                 > a.is-current {
+                    pointer-events: none;
                     color: $color-lightest;
+
 
                     &::after {
                         width: 100%;
@@ -90,7 +96,5 @@
                 }
             }
         }
-
     }
-
 }

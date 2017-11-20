@@ -2098,6 +2098,7 @@ a.button {
 }
 
 .site-header__navigate > ul > li > a.is-current {
+  pointer-events: none;
   color: rgba(18, 19, 20, 0.4);
 }
 
@@ -2162,6 +2163,10 @@ a.button {
   padding: .3rem 1rem;
 }
 
+.mobile-menu__box > ul > li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 .mobile-menu__box > ul > li:hover a::after {
   width: 100%;
 }
@@ -2199,6 +2204,7 @@ a.button {
 }
 
 .mobile-menu__box > ul > li > a.is-current {
+  pointer-events: none;
   color: rgba(18, 19, 20, 0.4);
 }
 
@@ -2318,6 +2324,7 @@ a.button {
 }
 
 .site-footer__navigate > ul > li > a.is-current {
+  pointer-events: none;
   color: rgba(18, 19, 20, 0.4);
 }
 
@@ -2765,6 +2772,12 @@ a.button {
 }
 
 @media all and (max-width: 767px) {
+  .contacts-form__column:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+@media all and (min-width: 768px) {
   .contacts-form__column:not(:last-child) {
     margin-bottom: 3rem;
   }

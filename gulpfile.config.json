@@ -14,7 +14,7 @@
         "build": [
           "src/app/assets/vendors/jquery/dist/jquery.js",
           "src/app/assets/javascripts/components/smartresize.js",
-          "src/app/assets/javascripts/components/fade-in.js",
+          "src/app/assets/javascripts/components/load.js",
           "src/app/assets/vendors/jquery-ui/jquery-ui.js",
           "src/app/assets/vendors/jquery-ui/ui/i18n/datepicker-ru.js",
           "src/app/assets/vendors/jquery.transit/jquery.transit.js",
